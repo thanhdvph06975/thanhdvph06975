@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { product } from "../model/product";
+import { data } from '../model/mockData';
 
 @Component({
   selector: 'app-product-manager',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-manager.component.css']
 })
 export class ProductManagerComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    
+  }
+ 
+  ngOnInit(): void {
   }
 
+  // selected:product;
+  
+  products=data;
+
+  removeItem(id) {
+    return this.products = this.products.filter(p => p.id != id);
+  }
 }
